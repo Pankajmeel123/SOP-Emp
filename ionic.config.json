@@ -1,0 +1,7 @@
+{
+  "name": "SOP-emp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
