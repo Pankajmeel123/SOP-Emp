@@ -1,0 +1,73 @@
+.custom-header {
+	width: 100%;
+	float: left;
+	background-attachment: #fff;
+ 
+}
+.logo_head {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.logo_head img {
+	width: 100px;
+	text-align: center;
+	;
+}
+.custom-header {
+ ion-icon {
+ font-size: 33px;
+}
+}
+:host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
+ color: #000;
+ width: auto;
+ font-size: 17px;
+}
+.header-md {
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0), 0 4px 5px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.ion-content {
+	 padding: 10px;
+	float: left;
+	width: 100%;--ion-background-color: #ebf4f3;
+	background-color: #ebf4f3;
+}
+.ion-content h2 {
+	width: 100%;
+	float: left;
+	font-size: 17px;
+	margin: 0;
+	color: #154fa0;
+	font-weight: bold;
+	padding: 5px 0 0;
+	text-align: left;
+}
+.attendance_filter {
+	width: 100%;
+	float: left;
+	padding: 0 0 10px;
+}
+.attendance_filter label {
+	width: 100%;
+	float: left;
+	padding: 10px 0;
+	font-size: 14px;
+}
+.attendance_filter input {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #154fa0;
+} 
+.attendance_filter button {
+	background: #154fa0;
+  float: left;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 4px;
+  float: right;
+  margin: 20px 0 30px; 
+} 

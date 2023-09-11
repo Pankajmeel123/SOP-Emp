@@ -1,27 +1,231 @@
 #container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
 }
-
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+	font-size: 20px;
+	line-height: 26px;
 }
-
 #container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+	font-size: 16px;
+	line-height: 22px;
+	color: #8c8c8c;
+	margin: 0;
 }
-
 #container a {
-  text-decoration: none;
+	text-decoration: none;
+}
+.custom-header {
+	width: 100%;
+	float: left;
+	background-attachment: #fff;
+	 
+}
+.logo_head {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.logo_head img {
+	width: 100px;
+	text-align: center;
+	;
+}
+.custom-header {
+ ion-icon {
+ font-size: 33px;
+}
+}
+:host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
+ color: #000;
+ width: auto;
+ font-size: 17px;
+}
+.header-md {
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0), 0 4px 5px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.ion-content {
+	padding: 10px;
+	float: left;
+	width: 100%;
+	--ion-background-color: #ebf4f3;
+}
+.emp_id {
+	width: 100%;
+	float: left;
+	padding: 20px 0;
+}
+.emp_id h2 {
+	width: 100%;
+	float: left;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+	color: #154fa0;
+	font-weight: bold;
+	padding:0 0 10px;
+}
+.emp_id p {
+	width: 100%;
+	float: left;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	color: #154fa0;
+}
+.total_itam {
+	width: 100%;
+	float: left;
+	padding: 0 0 20px;
+}
+.total_itam ul {
+	margin: 0;
+	padding: 0;
+}
+.total_itam ul li {
+	width: 47%;
+	background: #fff;
+	display: inline-block;
+	border-radius: 7px;
+	padding: 10px;
+	margin: 5px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.total_itam ul li span img {
+	width: 40px;
+	float: left;
+}
+.total_itam ul li span {
+	width: 50%;
+	float: left;
+	font-size: 22px;
+	text-align: right;
+	color: #154fa0;
+	font-weight: 900;
+}
+.total_itam ul li p {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	text-align: right;
+	padding:10px 0px 0px;
+	margin: 0;
+}
+.shift_add {
+	width: 100%;
+	float: left;
+}
+.shift_add_bg {
+	position: relative;
+}
+.shift_add_bg img {
+	width: 100%;
+	float: left;
+	border-radius: 6px;
+	height: 110px;
+	background-position: top;
+	object-fit: cover;
+	object-position: center top;
+}
+.text_shift_add {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 10px;
+}
+.text_shift_add h3 {
+	width: 100%;
+	float: left;
+	font-size: 17px;
+	text-align: center;
+	color: #fff;
+	padding: 2px 0 5px;
+	margin: 0;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.boder_left {
+	border-left:1px solid #ffffff6e;
+}
+.text_shift_add p {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px 0;
+	margin: 0;
+	color: #fff;
+}
+.add_availability {
+	width: 100%;
+	float: left;
+	padding: 20px 0;
+}
+.add_availability button {
+	background: none;
+	border: 2px solid #154fa0;
+	border-radius: 50px;
+	padding: 10px 20px;
+	color: #154fa0;
+	float: right;
+}
+.availability_list {
+	width: 100%;
+	float: left;
+}
+.availability_list_one {
+	width: 100%;
+	float: left;
+	border: 2px solid #154fa0;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+.icon_left {
+	width: 10%;
+	float: left;
+}
+.icon_left img {
+	width: 100%;
+	float: left;
+}
+.text_center {
+	width: 50%;
+	float: left;
+	padding: 0 0 0 7px;
+}
+.text_center h2 {
+	font-size: 16px;
+	float: left;
+	padding: 0 0 3px;
+	margin: 0;
+	color: #000;
+	width: 100%;
+}
+.text_center p {
+	font-size: 13px;
+	color: #767676;
+	width: 100%;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.text_right {
+	width: 40%;
+	float: left;
+}
+.text_right p {
+	font-size: 13px;
+	color: #767676;
+	width: 100%;
+	float: right;
+	padding: 9px 0 0;
+	margin: 0;
+	text-align: right;
 }
