@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesProfilePage implements OnInit {
 
+  profile:any;
+
   constructor() { }
 
   ngOnInit() {
+    this.profile = JSON.parse(localStorage.getItem('userdata') || '{}');
+    console.log(this.profile)
   }
 
 }

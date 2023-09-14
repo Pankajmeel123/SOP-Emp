@@ -19,6 +19,11 @@
  font-size: 33px;
 }
 }
+ion-select{
+	margin: 10px 0 0px;
+    font-size: 14px;
+    border-bottom: 1px solid #c0c0c0;
+}
 :host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
  color: #000;
  width: auto;

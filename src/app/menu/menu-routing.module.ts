@@ -29,7 +29,7 @@ const routes: Routes = [
         loadChildren: () => import('../employees-add/employees-add.module').then( m => m.EmployeesAddPageModule)
       },
       {
-        path: 'employees-profile',
+        path: 'profile',
         loadChildren: () => import('../employees-profile/employees-profile.module').then( m => m.EmployeesProfilePageModule)
       },
     ]

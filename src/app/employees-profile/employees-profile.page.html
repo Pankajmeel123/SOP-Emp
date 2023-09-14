@@ -1,7 +1,7 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
@@ -17,99 +17,78 @@
   <div style="padding: 10px;">
     <div class="emp_id">
       <h2>Hi Johny </h2>
-      <p>Employee ID - <b> johny1010</b></p>
+      <p>Employee ID - <b> {{profile?.employeeId}}</b></p>
     </div>
     <div class="attendence_table">
       <table>
         <tbody>
           <tr>
             <th>Employer Name</th>
-            <td>SMPL</td>
+            <td>{{profile?.employerName}}</td>
           </tr>
           <tr>
             <th>Phone</th>
-            <td>9664040502</td>
+            <td>{{profile?.phone}}</td>
           </tr>
           <tr>
             <th>Category</th>
-            <td>Operator</td>
+            <td>{{profile?.category}}</td>
           </tr>
           <tr>
             <th>Type</th>
-            <td>Staff</td>
+            <td>{{profile?.type}}</td>
           </tr>
           <tr>
             <th>RFId</th>
-            <td>08926</td>
+            <td>{{profile?.rfid}}</td>
           </tr>
           <tr>
             <th>Adhar No</th>
-            <td>9982-2867-0719</td>
+            <td>{{profile?.adhar_no}}</td>
           </tr>
           <tr>
             <th>Bank Name</th>
-            <td>AU Small Finance Bank</td>
+            <td>{{profile?.bank_name}}</td>
           </tr>
           <tr>
             <th>Acc No</th>
-            <td>1711216410081710</td>
+            <td>{{profile?.acc_no}}</td>
           </tr>
           <tr>
             <th>Ifsc</th>
-            <td>AUBL0002164</td>
+            <td>{{profile?.ifsc}}</td>
           </tr>
           <tr>
             <th>Primary Stage</th>
-            <td>WI/01</td>
+            <td>{{profile?.stage_id}}</td>
           </tr>
           <tr>
             <th>Secondary Stage</th>
-            <td>WI/22</td>
+            <td>{{profile?.secondary_stage_id}}</td>
           </tr>
           <tr>
             <th>Group Stage</th>
-            <td>group1</td>
+            <td>{{profile?.group_stage_id}}</td>
           </tr>
           <tr>
             <th>Renumeration</th>
-            <td>25875</td>
+            <td>{{profile?.renumeration}}</td>
           </tr>
           <tr>
             <th>Insurance No</th>
-            <td>1234567890</td>
+            <td>{{profile?.insurance_no}}</td>
           </tr>
           <tr>
             <th>Joining Date</th>
-            <td>18/04/2023</td>
+            <td>{{profile?.joining_date}}</td>
           </tr>
           <tr>
             <th>Status</th>
-            <td> Active</td>
+            <td>{{profile?.status == 1?'Active':'Inactive'}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </ion-content>
-<ion-footer>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="dashboard">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label >Home</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="recommendation">
-        <ion-icon name="person-add-outline"></ion-icon>
-        <ion-label>Availability</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="blog">
-        <ion-icon name="person-outline"></ion-icon>
-        <ion-label> Account </ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="events">
-        <ion-icon name="power-outline"></ion-icon>
-        <ion-label> Logout </ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</ion-footer>
+ 

@@ -33,6 +33,14 @@ export class ApiService {
     return this.Http.post<any>(environment.url + 'employeeFetchAvailabilityApp.json',data,{observe:'response'});
   }
 
+  employeeListOfMessHistoryApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeListOfMessHistoryApp.json',data,{observe:'response'});
+  }
+
+  employeeListAttendanceApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeListAttendanceApp.json',data,{observe:'response'});
+  }
+
   loginApp(data:any):Observable<HttpResponse<any>>{
     return this.Http.post<any>(environment.url + 'loginApp.json',data,{observe:'response'});
   }

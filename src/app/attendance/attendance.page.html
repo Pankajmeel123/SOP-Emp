@@ -1,7 +1,7 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
@@ -17,8 +17,24 @@
  <div style="padding: 10px;">
     <h2> Attendence Report </h2>
     <div class="attendance_filter">
-     <label>Month :</label>
-          <input type="text"  placeholder="Month" />
+      <ion-select
+        aria-label="Months"
+        placeholder="Select Month"
+        (ionChange)="employeeListAttendanceApp($event)"
+      >
+        <ion-select-option value="1">January</ion-select-option>
+        <ion-select-option value="2">February</ion-select-option>
+        <ion-select-option value="3">March</ion-select-option>
+        <ion-select-option value="4">April</ion-select-option>
+        <ion-select-option value="5">May</ion-select-option>
+        <ion-select-option value="6">June</ion-select-option>
+        <ion-select-option value="7">July</ion-select-option>
+        <ion-select-option value="8">August</ion-select-option>
+        <ion-select-option value="9">September</ion-select-option>
+        <ion-select-option value="10">October</ion-select-option>
+        <ion-select-option value="11">November</ion-select-option>
+        <ion-select-option value="12">December</ion-select-option>
+      </ion-select>
     </div>
     <div class="attendence_table">
       <table>
@@ -31,11 +47,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>08-09-2023</td>
-            <td>3:34 AM</td>
-            <td>3:38 AM</td>
-            <td>00:04 </td>
+          <tr *ngFor="let data of attendanceData">
+            <td>{{data.date_in}}</td>
+            <td>{{data.time_in}}</td>
+            <td>{{data.time_out}}</td>
+            <td>{{data.time_difference}}</td>
           </tr>
           <tr>
             <td>08-09-2023</td>
@@ -85,25 +101,4 @@
  </div>
   </div>
 </ion-content>
-<ion-footer>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="dashboard">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label >Home</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="recommendation">
-        <ion-icon name="person-add-outline"></ion-icon>
-        <ion-label>Availability</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="blog">
-        <ion-icon name="person-outline"></ion-icon>
-        <ion-label> Account </ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="events">
-        <ion-icon name="power-outline"></ion-icon>
-        <ion-label> Logout </ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</ion-footer>
+ 
