@@ -7,18 +7,12 @@
 </div>
   <div class="form">
     <h2>Login</h2>
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    <form class="login-form" (ngSubmit)="f.form.valid && loginApp()" #f="ngForm">
+      <input type="text" [(ngModel)]="form.username" #username="ngModel" name="username" required placeholder="username"/>
+      <label class="error" *ngIf="(!f.submitted && !username.untouched && username.invalid) || (f.submitted && username.invalid)">Enter Username</label>
+      <input type="password" [(ngModel)]="form.password" #password="ngModel" name="password" required placeholder="password"/>
+      <label class="error" *ngIf="(!f.submitted && !password.untouched && password.invalid) || (f.submitted && password.invalid)">Enter Password</label>
+      <button type="submit">login</button>
     </form>
   </div>
 </div>

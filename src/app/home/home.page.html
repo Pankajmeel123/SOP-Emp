@@ -1,7 +1,7 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
@@ -20,102 +20,80 @@
       <p>Employee ID - <b> johny1010</b></p>
     </div>
     <div class="total_itam">
-      <ul>
-        <li> <span><img src="assets/icon/des_icon1.png"></span> <span>100</span>
-          <p>Total Hours in a Month</p>
-        </li>
-        <li> <span><img src="assets/icon/des_icon2.png"></span> <span>05</span>
-          <p>Total Leaves</p>
-        </li>
-        <li> <span><img src="assets/icon/des_icon4.png"></span> <span>15,000</span>
-          <p>Total Salary</p>
-        </li>
-        <li> <span><img src="assets/icon/des_icon3.png"></span> <span>100</span>
-          <p>Total Meals</p>
-        </li>
-      </ul>
+      <ion-grid>
+        <ion-row class="ul">
+          <ion-col size="6">
+            <div class="li">
+              <img src="assets/icon/des_icon1.png">
+              <div>{{dashData?.total_hours}}</div>
+              <p>Total Hours in a Month</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="li">
+              <img src="assets/icon/des_icon2.png">
+              <div>{{dashData?.total_leaves}}</div>
+              <p>Total Leaves</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="li">
+              <img src="assets/icon/des_icon4.png">
+              <div>{{dashData?.total_salaray}}</div>
+              <p>Total Salary</p>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="li">
+              <img src="assets/icon/des_icon3.png">
+              <div>{{dashData?.total_meals}}</div>
+              <p>Total Meals</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
     <div class="shift_add">
-      <div class="shift_add_bg"> <img src="assets/images/shift_bg.jpg">
+      <div class="shift_add_bg">
         <div class="text_shift_add">
           <ion-row>
+            <h2>Shifts</h2>
             <ion-col size="6">
-              <h3>Today Shift</h3>
-              <p>8hrs Shift</p>
-              <p>10:00am -06-00pm</p>
+              <h3>Today</h3>
+              <ng-container *ngIf="shiftData?.today">
+                <p>{{shiftData?.today?.shift_time | titlecase}}</p>
+                <p>{{shiftData?.today?.shift_durations}}</p>
+              </ng-container>
+              <ng-container *ngIf="!shiftData?.today">
+                <p>-</p>
+              </ng-container>
             </ion-col>
             <ion-col size="6" class="boder_left">
-              <h3>tomorrow Shift</h3>
-              <p>8hrs Shift</p>
-              <p>10:00am -06-00pm</p>
-
+              <h3>Tomorrow</h3>
+              <ng-container *ngIf="shiftData?.tomorrow">
+                <p>{{shiftData?.tomorrow?.shift_time | titlecase}}</p>
+                <p>{{shiftData?.tomorrow?.shift_durations}}</p>
+              </ng-container>
+              <ng-container *ngIf="!shiftData?.tomorrow">
+                <p>-</p>
+              </ng-container>
             </ion-col>
           </ion-row>
-          <button style="color: #fff;background: none;float: right;font-size: 10px;padding: 3px 0;">View All</button>
+          <button>View All</button>
         </div>
       </div>
     </div>
     <div class="add_availability">
       <button> Add  Availability </button>
       <div class="availability_list">
-        <div class="availability_list_one">
+        <div *ngFor="let data of availData;" class="availability_list_one">
           <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
           <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
+            <h2>{{data.shift_date}}</h2>
+            <p>{{data.shift_time}}</p>
           </div>
           <div class="text_right">
-            <p>10:00am - 06-00pm</p>
-          </div>
-        </div>
-        <div class="availability_list_one">
-          <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
-          <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
-          </div>
-          <div class="text_right">
-            <p>10:00am - 06-00pm</p>
-          </div>
-        </div>
-        <div class="availability_list_one">
-          <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
-          <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
-          </div>
-          <div class="text_right">
-            <p>10:00am - 06-00pm</p>
-          </div>
-        </div>
-        <div class="availability_list_one">
-          <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
-          <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
-          </div>
-          <div class="text_right">
-            <p>10:00am - 06-00pm</p>
-          </div>
-        </div>
-        <div class="availability_list_one">
-          <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
-          <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
-          </div>
-          <div class="text_right">
-            <p>10:00am - 06-00pm</p>
-          </div>
-        </div>
-        <div class="availability_list_one">
-          <div class="icon_left"><img src="assets/images/check_iocn.png"></div>
-          <div class="text_center">
-            <h2>1 September 2023</h2>
-            <p>8 hrs Shift</p>
-          </div>
-          <div class="text_right">
-            <p>10:00am - 06-00pm</p>
+            <p>{{data.shift_durations}}</p>
           </div>
         </div>
       </div>

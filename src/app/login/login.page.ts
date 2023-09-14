@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  form = {
+    username:'',
+    password:''
+  }
+
+  constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  loginApp(){
+    this.api.loginApp(this.form).subscribe(res=>{
+      localStorage.setItem('userdata',JSON.stringify(res.body.data));
+      this.router.navigate(['/menu/home']);
+    })
   }
 
 }
