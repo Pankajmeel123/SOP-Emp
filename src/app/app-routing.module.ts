@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'employees-profile',
     loadChildren: () => import('./employees-profile/employees-profile.module').then( m => m.EmployeesProfilePageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
 ];
 
