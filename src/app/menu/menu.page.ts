@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
+  profile:any;
+
   constructor() { }
 
   ngOnInit() {
+    this.profile = JSON.parse(localStorage.getItem('userdata') || '{}');
   }
 
 }

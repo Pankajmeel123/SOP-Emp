@@ -6,18 +6,13 @@
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
     </ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-content ">
   <div style="padding: 10px;">
     <div class="emp_id">
-      <h2>Hi Johny </h2>
-      <p>Employee ID - <b> johny1010</b></p>
+      <h2>Hi {{profile?.fullName | titlecase}} </h2>
+      <p>Employee ID - <b> {{profile?.employeeId | titlecase}}</b></p>
     </div>
     <div class="total_itam">
       <ion-grid>
@@ -84,7 +79,7 @@
       </div>
     </div>
     <div class="add_availability">
-      <button> Add  Availability </button>
+      <button (click)="presentAvailabilityModal()"> Add  Availability </button>
       <div class="availability_list">
         <div *ngFor="let data of availData;" class="availability_list_one">
           <div class="icon_left"><img src="assets/images/check_iocn.png"></div>

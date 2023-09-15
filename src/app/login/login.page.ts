@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
   loginApp(){
     this.api.loginApp(this.form).subscribe(res=>{
       localStorage.setItem('userdata',JSON.stringify(res.body.data));
-      this.router.navigate(['/menu/home']);
+      this.router.navigate(['/menu/home'], {replaceUrl:true});
     })
   }
 

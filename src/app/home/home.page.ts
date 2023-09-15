@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../service/api/api.service';
+import { EmployeesAddPage } from '../employees-add/employees-add.page'
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +16,10 @@ export class HomePage {
     tomorrow:null
   };
   availData:any;
+  profile:any;
 
-  constructor(private api:ApiService) {
+  constructor(private api:ApiService, private modalController: ModalController) {
+    this.profile = JSON.parse(localStorage.getItem('userdata') || '{}');
     this.employeeInfoApp();
   }
 
@@ -38,6 +42,14 @@ export class HomePage {
     this.api.employeeFetchAvailabilityApp().subscribe(res=>{
       this.availData = res.body.data;
     })
+  }
+
+  async presentAvailabilityModal() {
+    const modal = await this.modalController.create({
+      component: EmployeesAddPage,
+      cssClass: 'my-custom-class',
+    });
+    return await modal.present();
   }
 
 }

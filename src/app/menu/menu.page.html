@@ -12,7 +12,7 @@
                   <ion-col size='8'>
                     <div class="user_name">
                       <p>Welcome</p>
-                      <h2>pankaj meel</h2>
+                      <h2>{{profile?.fullName}}</h2>
                     </div>
                   </ion-col>
                 </ion-row>
@@ -21,7 +21,7 @@
         </div>
       </ion-menu-toggle>
     </ion-header>
-    <ion-content class="ion-padding">
+    <ion-content>
       <ion-menu-toggle style="outline: 0;">
         <ion-list>
           <ion-item routerLink="/menu/home">Home</ion-item>

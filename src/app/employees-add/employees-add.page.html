@@ -1,103 +1,31 @@
-<ion-header translucent>
-  <ion-toolbar class="custom-header">
-    <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
-    </ion-buttons>
-    <ion-title class="ion-text-center ion-text-uppercase">
-      <div class="logo_head"> <img src="assets/images/logo.png"></div>
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true" class="ion-content ">
-  <div style="padding: 10px;">
-    <h2> Employee </h2>
-    <div class="attendance_filter">
-      <label>Employer Name </label>
-      <input type="text"  placeholder="Employer Nameh" />
-    </div>
-    <div class="attendance_filter">
-      <label>Full Name </label>
-      <input type="text"  placeholder="Full Name" />
-    </div>
-    <div class="attendance_filter">
-      <label>Email </label>
-      <input type="text"  placeholder="Email" />
-    </div>
-    <div class="attendance_filter">
-      <label>Phone </label>
-      <input type="text"  placeholder="Phone" />
-    </div>
-    <div class="attendance_filter">
-      <label>Primary Stage </label>
-      <input type="text"  placeholder="Primary Stage" />
-    </div>
-    <div class="attendance_filter">
-      <label>Secondary Stage </label>
-      <input type="text"  placeholder="Secondary Stage" />
-    </div>
-    <div class="attendance_filter">
-      <label>Group Stage </label>
-      <input type="text"  placeholder="Group Stage" />
-    </div>
-    <div class="attendance_filter">
-      <label>Employee Id</label>
-      <input type="text"  placeholder="Employee Id" />
-    </div>
-    <div class="attendance_filter">
-      <label>RFId</label>
-      <input type="text"  placeholder="RFId" />
-    </div>
-    <div class="attendance_filter">
-      <label>Adhar No </label>
-      <input type="text"  placeholder="Adhar No" />
-    </div>
-    <div class="attendance_filter">
-      <label>Category</label>
-      <input type="text"  placeholder="Category" />
-    </div>
-    <div class="attendance_filter">
-      <label>Employee Type </label>
-      <input type="text"  placeholder="Employee Type" />
-    </div>
-    <div class="attendance_filter">
-      <label>Bank Name </label>
-      <input type="text"  placeholder="Bank Name" />
-    </div>
-    <div class="attendance_filter">
-      <label>Acc No</label>
-      <input type="text"  placeholder="Acc No" />
-    </div>
-    <div class="attendance_filter">
-      <label>Ifsc</label>
-      <input type="text"  placeholder="Ifsc" />
-    </div>
-    <div class="attendance_filter">
-      <label>Renumeration</label>
-      <input type="text"  placeholder="Renumeration" />
-    </div>
-    <div class="attendance_filter">
-      <label>Insurance No</label>
-      <input type="text"  placeholder="Insurance No" />
-    </div>
-    <div class="attendance_filter">
-      <label>Joining Date</label>
-      <input type="text"  placeholder="Joining Date" />
-    </div>
-    <div class="attendance_filter">
-      <label>Username/Phone NO</label>
-      <input type="text"  placeholder="Username/Phone NO" />
-    </div>
-    <div class="attendance_filter">
-      <label>Password</label>
-      <input type="text"  placeholder="Password" />
-    </div>
-    <div class="attendance_filter">
-    <button>Submit</button></div>
+
+  <div class="pop" style="padding: 10px;">
+    <h2>Add Availability </h2>
+    <form (ngSubmit)="f.form.valid && add()" #f="ngForm">
+      <ion-item>
+        <ion-label position="floating">Shift</ion-label>
+        <ion-select [(ngModel)]="form.shiftTime" required>
+          <ion-select-option value="4">4 hrs</ion-select-option>
+          <ion-select-option value="5">5 hrs</ion-select-option>
+          <ion-select-option value="9">9 hrs</ion-select-option>
+          <ion-select-option value="11">11 hrs</ion-select-option>
+          <ion-select-option value="12">12 hrs</ion-select-option>
+          <ion-select-option value="13">13 hrs</ion-select-option>
+          <ion-select-option value="14">14 hrs</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Date</ion-label>
+        <ion-input [(ngModel)]="form.datetimeIn"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Time</ion-label>
+        <ion-select [(ngModel)]="time" name="ti" #ti="ngModel" required>
+          <ion-select-option *ngFor="let data of timing" value="{{data.value}}">{{data.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="attendance_filter">
+      <button>Submit</button></div>
+    </form>
   </div>
-</ion-content>
  

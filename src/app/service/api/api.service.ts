@@ -28,7 +28,7 @@ export class ApiService {
 
   employeeFetchAvailabilityApp():Observable<HttpResponse<any>>{
     let data = {
-      empId:3
+      empId:JSON.parse(localStorage.getItem('userdata') || '{}').id
     }
     return this.Http.post<any>(environment.url + 'employeeFetchAvailabilityApp.json',data,{observe:'response'});
   }
@@ -39,6 +39,13 @@ export class ApiService {
 
   employeeListAttendanceApp(data:any):Observable<HttpResponse<any>>{
     return this.Http.post<any>(environment.url + 'employeeListAttendanceApp.json',data,{observe:'response'});
+  }
+
+  employeeShiftAllApp():Observable<HttpResponse<any>>{
+    let data = {
+      empId:JSON.parse(localStorage.getItem('userdata') || '{}').id
+    }
+    return this.Http.post<any>(environment.url + 'employeeShiftAllApp.json',data,{observe:'response'});
   }
 
   loginApp(data:any):Observable<HttpResponse<any>>{
