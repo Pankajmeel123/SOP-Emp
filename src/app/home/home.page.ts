@@ -49,7 +49,9 @@ export class HomePage {
       component: EmployeesAddPage,
       cssClass: 'my-custom-class',
     });
-    return await modal.present();
+    await modal.present();
+    await modal.onWillDismiss();
+    this.employeeFetchAvailabilityApp();
   }
 
 }

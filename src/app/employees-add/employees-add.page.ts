@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DateComponent } from '../date/date.component';
+import { ModalController } from '@ionic/angular';
+import { ApiService } from '../service/api/api.service';
 
 @Component({
   selector: 'app-employees-add',
@@ -60,14 +63,32 @@ export class EmployeesAddPage implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private modalController:ModalController, private api:ApiService) { }
 
   ngOnInit() {
+    this.form.datetimeIn = new Date().toJSON().split('T')[0];
+    console.log(this.form);
   }
 
-  add(){
-    // this.form.datetimeIn = this.form.datetimeIn
+  employeeAddAvailabilityApp(){
+    this.form.empId = JSON.parse(localStorage.getItem('userdata') || '{}').id;
+    this.form.datetimeIn = this.form.datetimeIn+'T'+this.time;
     console.log(this.form);
+    this.api.employeeAddAvailabilityApp(this.form).subscribe(res=>{
+      this.modalController.dismiss();
+    })
+  }
+
+  async presentAvailabilityModal() {
+    const modal = await this.modalController.create({
+      component: DateComponent,
+      cssClass: 'my-custom-class',
+    });
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    this.form.datetimeIn = data.split('T')[0];
+    console.log(data);
   }
 
 }

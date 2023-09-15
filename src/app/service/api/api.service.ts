@@ -41,6 +41,10 @@ export class ApiService {
     return this.Http.post<any>(environment.url + 'employeeListAttendanceApp.json',data,{observe:'response'});
   }
 
+  employeeAddAvailabilityApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeAddAvailabilityApp.json',data,{observe:'response'});
+  }
+
   employeeShiftAllApp():Observable<HttpResponse<any>>{
     let data = {
       empId:JSON.parse(localStorage.getItem('userdata') || '{}').id
