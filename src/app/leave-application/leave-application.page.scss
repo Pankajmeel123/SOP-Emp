@@ -50,13 +50,12 @@
 }
 .attendance_filter label {
 	width: 100%;
-	float: left;
 	padding: 10px 0;
 	font-size: 14px;
 }
 .attendance_filter input {
 	width: 100%;
-	float: left;
+	background: #fff;
 	font-size: 14px;
 	padding: 10px;
 	border-radius: 5px;
@@ -64,17 +63,22 @@
 }
 .attendance_filter select {
 	width: 100%;
-	float: left;
 	font-size: 14px;
+	background: #fff;
 	padding: 10px;
 	border-radius: 5px;
 	border: 1px solid #154fa0;
+}
+ion-radio-group{
+	display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
 }
 
 
 .attendance_filter textarea {
 	width: 100%;
-	float: left;
+	background: #fff;
 	font-size: 14px;
 	padding: 10px;
 	border-radius: 5px;

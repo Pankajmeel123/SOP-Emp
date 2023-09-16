@@ -24,7 +24,7 @@ export class AttendancePage implements OnInit {
   employeeListAttendanceApp(e:any){
     console.log(e)
     let data = {
-      empId:3,
+      empId:JSON.parse(localStorage.getItem('userdata') || '{}').id,
       current_month:parseInt(e.detail.value)
     }
     this.api.employeeListAttendanceApp(data).subscribe(res=>{

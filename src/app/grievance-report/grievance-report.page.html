@@ -1,45 +1,43 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-content ">
   <div style="padding: 10px;">
-    <h2> Grievance Application  </h2>
-       <div class="attendance_filter">
-      <label> Statement of Grievance </label>
-     <textarea id=" " name=" " rows="4" cols="50" placeholder=" Statement of Grievance" ></textarea>
-    </div>
- <div class="attendance_filter">
-      <label> Relief Sought </label>
-     <textarea id=" " name=" " rows="4" cols="50" placeholder=" Relief Sought" ></textarea>
-    </div> 
-    <div class="attendance_filter">
-      <label>Request Meeting  </label>
-      <div class="card">
-         <div class="form">
-            <label><input type="radio" class="input-radio off" name="pilih"> Yes </label>
-            <label><input type="radio" class="input-radio on" checked name="pilih"> ON</label>
+    <form (ngSubmit)="f.form.valid && employeeAddGrievanceApp()" #f="ngForm">
+      <h2> Grievance Application </h2>
+      <div class="attendance_filter">
+        <label> Statement of Grievance </label>
+        <textarea [(ngModel)]="form.statement_of_grievance" name="statement_of_grievance" #statement_of_grievance="ngModel" required rows="4" cols="50" placeholder=" Statement of Grievance"></textarea>
+      </div>
+      <div class="attendance_filter">
+        <label> Relief Sought </label>
+        <textarea [(ngModel)]="form.relief_sought" name="relief_sought" #relief_sought="ngModel" required rows="4" cols="50" placeholder=" Relief Sought"></textarea>
+      </div>
+      <div class="attendance_filter">
+        <label>Request Meeting </label>
+        <div class="card">
+          <ion-radio-group (ionChange)="form.metting_date = today" [(ngModel)]="form.request_metting" name="request_metting" #request_metting="ngModel" required>
+            <ion-radio value="no">No</ion-radio>
+            <ion-radio value="yes">Yes</ion-radio>
+          </ion-radio-group>
         </div>
-    </div>
-    </div>
-    <div class="attendance_filter">
-      <label>if Yes, Meeting date scheduled</label>
-      <input type="text"  placeholder="Date" />
-    </div>
-
-    <button>Submit</button>
-
-
+      </div>
+      <div *ngIf="form.request_metting == 'yes'" class="attendance_filter" (click)="presentDateModal()">
+        <label>If Yes, Meeting date scheduled</label>
+        <input [(ngModel)]="form.metting_date" name="metting_date" #metting_date="ngModel" type="text" placeholder="Date" />
+      </div>
+      <button>Submit</button>
+    </form>
   </div>
 </ion-content>

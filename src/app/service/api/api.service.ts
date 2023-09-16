@@ -45,11 +45,20 @@ export class ApiService {
     return this.Http.post<any>(environment.url + 'employeeAddAvailabilityApp.json',data,{observe:'response'});
   }
 
-  employeeShiftAllApp():Observable<HttpResponse<any>>{
-    let data = {
-      empId:JSON.parse(localStorage.getItem('userdata') || '{}').id
-    }
+  employeeShiftAllApp(data:any):Observable<HttpResponse<any>>{
     return this.Http.post<any>(environment.url + 'employeeShiftAllApp.json',data,{observe:'response'});
+  }
+
+  employeeAddGrievanceApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeAddGrievanceApp.json',data,{observe:'response'});
+  }
+
+  employeeFetchLeaveApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeFetchLeaveApp.json',data,{observe:'response'});
+  }
+
+  employeeAddLeaveApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeAddLeaveApp.json',data,{observe:'response'});
   }
 
   loginApp(data:any):Observable<HttpResponse<any>>{

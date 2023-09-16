@@ -6,6 +6,10 @@
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-content ">
@@ -24,7 +28,7 @@
               <p>Total Hours in a Month</p>
             </div>
           </ion-col>
-          <ion-col size="6">
+          <ion-col size="6" routerLink="/menu/leave-application-list">
             <div class="li">
               <img src="assets/icon/des_icon2.png">
               <div>{{dashData?.total_leaves}}</div>
@@ -74,7 +78,7 @@
               </ng-container>
             </ion-col>
           </ion-row>
-          <button>View All</button>
+          <button routerLink="/menu/all-shifts">View All</button>
         </div>
       </div>
     </div>

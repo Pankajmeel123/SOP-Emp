@@ -1,14 +1,13 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -17,8 +16,24 @@
   <div style="padding: 10px;">
     <h2> Shift Schedule </h2>
     <div class="attendance_filter">
-      <label>Month :</label>
-      <input type="text"  placeholder="Month" />
+      <ion-select
+        aria-label="Months"
+        placeholder="Select Month"
+        (ionChange)="employeeShiftAllApp($event)"
+      >
+        <ion-select-option value="1">January</ion-select-option>
+        <ion-select-option value="2">February</ion-select-option>
+        <ion-select-option value="3">March</ion-select-option>
+        <ion-select-option value="4">April</ion-select-option>
+        <ion-select-option value="5">May</ion-select-option>
+        <ion-select-option value="6">June</ion-select-option>
+        <ion-select-option value="7">July</ion-select-option>
+        <ion-select-option value="8">August</ion-select-option>
+        <ion-select-option value="9">September</ion-select-option>
+        <ion-select-option value="10">October</ion-select-option>
+        <ion-select-option value="11">November</ion-select-option>
+        <ion-select-option value="12">December</ion-select-option>
+      </ion-select>
     </div>
     <div class="attendence_table">
       <table>
@@ -31,101 +46,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
-          </tr>
-          <tr>
-            <td>1 September 2023</td>
-            <td>8hrs Shift </td>
-            <td>10:00 AM</td>
-            <td>06:00 </td>
+          <tr *ngFor="let data of shiftData">
+            <td>{{data.shift_date}}</td>
+            <td>{{data.shift_time}}</td>
+            <td>{{data.shift_durations.split('-')[0]}}</td>
+            <td>{{data.shift_durations.split('-')[1]}}</td>
           </tr>
         </tbody>
       </table>

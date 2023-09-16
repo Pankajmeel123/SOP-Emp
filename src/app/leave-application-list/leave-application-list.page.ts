@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api/api.service';
 
 @Component({
   selector: 'app-leave-application-list',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaveApplicationListPage implements OnInit {
 
-  constructor() { }
+  leaveData:any;
+
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
+    this.employeeFetchLeaveApp();
+  }
+
+  employeeFetchLeaveApp(){
+    let data = {
+      empId:JSON.parse(localStorage.getItem('userdata') || '{}').id,
+    }
+    this.api.employeeFetchLeaveApp(data).subscribe(res=>{
+      console.log(res.body.data);
+      this.leaveData = res.body.data;
+    })
   }
 
 }
