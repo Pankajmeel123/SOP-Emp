@@ -1,0 +1,51 @@
+
+<ion-header translucent>
+  <ion-toolbar class="custom-header">
+    <ion-buttons slot="start">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center ion-text-uppercase">
+      <div class="logo_head"> <img src="assets/images/logo.png"></div>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-content ">
+  <div style="padding: 10px;">
+    <h2> Leave Application </h2>
+    <div class="attendance_filter">
+      <label>Date</label>
+      <input type="text"  placeholder="Date" />
+    </div>
+    <div class="attendance_filter">
+      <label>Leave Number of days  </label>
+      <div class="card">
+         <div class="form">
+            <label><input type="radio" class="input-radio off" name="pilih"> Full Day  </label>
+            <label><input type="radio" class="input-radio on" checked name="pilih"> Half Day</label>
+        </div>
+    </div>
+    </div>
+    <div class="attendance_filter">
+      <label>Half Day</label>
+      <select name="cars" id="cars" form="carform">
+        <option value="volvo">Second  Half Day</option>
+        <option value="saab">First Half Day</option>
+       </select>
+     </div>
+     <div class="attendance_filter">
+      <label>Number of days</label>
+      <input type="text"  placeholder=" Number of days" />
+
+     </div>
+    <div class="attendance_filter">
+      <label> Leave Reasons </label>
+      <textarea id=" " name=" " rows="4" cols="50" placeholder=" Relief Sought" ></textarea>
+    </div>
+    <button>Submit</button>
+  </div>
+</ion-content>
