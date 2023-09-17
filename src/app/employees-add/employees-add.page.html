@@ -2,6 +2,16 @@
   <div class="pop" style="padding: 10px;">
     <h2>Add Availability </h2>
     <form (ngSubmit)="f.form.valid && employeeAddAvailabilityApp()" #f="ngForm">
+      <ion-item (click)="presentAvailabilityModal()">
+        <ion-label position="floating">Date</ion-label>
+        <ion-input [(ngModel)]="form.datetimeIn" name="datetimeIn" #datetimeIn="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Time</ion-label>
+        <ion-select [(ngModel)]="time" name="ti" #ti="ngModel" required>
+          <ion-select-option *ngFor="let data of timing" value="{{data.value}}">{{data.key}}</ion-select-option>
+        </ion-select>
+      </ion-item>
       <ion-item>
         <ion-label position="floating">Shift</ion-label>
         <ion-select [(ngModel)]="form.shiftTime" name="shiftTime" #shiftTime="ngModel" required>
@@ -12,16 +22,6 @@
           <ion-select-option value="12">12 hrs</ion-select-option>
           <ion-select-option value="13">13 hrs</ion-select-option>
           <ion-select-option value="14">14 hrs</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item (click)="presentAvailabilityModal()">
-        <ion-label position="floating">Date</ion-label>
-        <ion-input [(ngModel)]="form.datetimeIn" name="datetimeIn" #datetimeIn="ngModel" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Time</ion-label>
-        <ion-select [(ngModel)]="time" name="ti" #ti="ngModel" required>
-          <ion-select-option *ngFor="let data of timing" value="{{data.value}}">{{data.key}}</ion-select-option>
         </ion-select>
       </ion-item>
       <div class="attendance_filter">

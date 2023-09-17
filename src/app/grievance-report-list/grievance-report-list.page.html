@@ -1,14 +1,13 @@
 <ion-header translucent>
   <ion-toolbar class="custom-header">
     <ion-buttons slot="start">
-      <ion-icon name="menu-outline"></ion-icon>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
       <div class="logo_head"> <img src="assets/images/logo.png"></div>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -17,7 +16,7 @@
   <div style="padding: 10px;">
     <h2> Grievance Report  Status </h2>
     <div class="add_availability">
-      <button > Grievance Report </button>
+      <button routerLink="/menu/grievance-report"> Grievance Report </button>
     </div>
     <div class="attendence_table">
       <table>
@@ -30,59 +29,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
-          </tr>
-          <tr>
-            <td>16 September 2023</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>What is Lorem Ipsum?</td>
-            <td>Status Pending</td>
+          <tr *ngFor="let data of grievData">
+            <td>{{data.metting_date}}</td>
+            <td>{{data.statement_of_grievance}}</td>
+            <td>{{data.relief_sought}}</td>
+            <td>{{data.status == '0'?'Pending':'Active'}}</td>
           </tr>
         </tbody>
       </table>

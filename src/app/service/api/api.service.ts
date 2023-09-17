@@ -61,6 +61,10 @@ export class ApiService {
     return this.Http.post<any>(environment.url + 'employeeAddLeaveApp.json',data,{observe:'response'});
   }
 
+  employeeFetchGrievanceApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeFetchGrievanceApp.json',data,{observe:'response'});
+  }
+
   loginApp(data:any):Observable<HttpResponse<any>>{
     return this.Http.post<any>(environment.url + 'loginApp.json',data,{observe:'response'});
   }
