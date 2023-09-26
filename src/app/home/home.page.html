@@ -18,6 +18,22 @@
       <h2>Hi {{profile?.fullName | titlecase}} </h2>
       <p>Employee ID - <b> {{profile?.employeeId | titlecase}}</b></p>
     </div>
+    <div style="padding-bottom: 0px;" class="total_itam">
+      <ion-row class="ul">
+        <ion-col size="12">
+          <div class="li">
+            <div>
+              <p style="color: #000;font-weight: normal;padding-top: 0px;">Stage Name</p>
+              <div style="font-size: 15px;">{{dashData?.stage_name}}</div>
+            </div>
+            <div *ngIf="dashData?.stage_password">
+              <p style="color: #000;font-weight: normal;">Stage Password</p>
+              <div style="font-size: 15px;display: flex;align-items: center;">{{dashData?.stage_password}}<ion-icon (click)="writeToClipboard(dashData?.stage_password)" style="margin-left: 20px;margin-top: 0px;" name="copy-outline"></ion-icon></div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
     <div class="total_itam">
       <ion-grid>
         <ion-row class="ul">

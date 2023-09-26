@@ -65,6 +65,18 @@ export class ApiService {
     return this.Http.post<any>(environment.url + 'employeeFetchGrievanceApp.json',data,{observe:'response'});
   }
 
+  employeeSendPasswordOtpApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeSendPasswordOtpApp.json',data,{observe:'response'});
+  }
+
+  employeeCheckPasswordOtpApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeCheckPasswordOtpApp.json',data,{observe:'response'});
+  }
+
+  employeeUpdatePasswordApp(data:any):Observable<HttpResponse<any>>{
+    return this.Http.post<any>(environment.url + 'employeeUpdatePasswordApp.json',data,{observe:'response'});
+  }
+
   loginApp(data:any):Observable<HttpResponse<any>>{
     return this.Http.post<any>(environment.url + 'loginApp.json',data,{observe:'response'});
   }
